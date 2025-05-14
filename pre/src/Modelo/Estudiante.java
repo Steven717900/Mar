@@ -10,7 +10,7 @@ import java.util.Queue;
  *
  * @author julie
  */
-public class Estudiante extends Persona implements Usuario {
+public class Estudiante extends Persona {
 
     private LinkedList<String> clases = new LinkedList<>();
     private Queue<String> colaSesiones = new LinkedList<>();
