@@ -4,22 +4,20 @@
  */
 package Visual;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-
 import Controlador.Controlador;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author julie
  */
-public class TutorPlaceGUI {
+public class TutorPlace {
 
-    //Parte visual :p
     public static void main(String[] args) {
+        Controlador controlador = new Controlador();
+        VistaInicio inicio = new VistaInicio(controlador);
+        inicio.setLocationRelativeTo(null);
+        inicio.setVisible(true);
 
     }
-
 }
