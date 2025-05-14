@@ -3,57 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  *
  * @author julie
  */
-
-
 // MODELO
-public class Tutor extends Persona{
-    private LinkedList<String> clases = new LinkedList<>(); // Lista simplemente enlazada
-    private Queue<String> solicitudes = new LinkedList<>(); // Cola de solicitudes
+public class Tutor extends Persona {
 
-    public Tutor(String nombre) {
-        super(nombre);
+    private Stack<String> clasesPendientes = new Stack<>();
+    private String curso;
+    private double precio;
+
+    public Tutor(String nombre, String password, String curso, double precio) {
+        super(nombre, password);
+        this.curso = curso;
+        this.precio = precio;
+        clasesPendientes.push(curso);
     }
 
-    public LinkedList<String> getClases() {
-        return clases;
+    public void mostrarInfo() {
+        System.out.println("Tutor: " + nombre + " | Curso: " + curso + " | Precio: $" + precio);
     }
 
-    public void setClases(LinkedList<String> clases) {
-        this.clases = clases;
+    public String getCurso() {
+        return curso;
     }
 
-    public Queue<String> getSolicitudes() {
-        return solicitudes;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setSolicitudes(Queue<String> solicitudes) {
-        this.solicitudes = solicitudes;
+    public String verHorario() {
+        return "Tutor " + nombre + ": " + curso + " - $" + precio;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-
-    @Override
-    public String toString() {
-        return "Tutor{" + "clases=" + clases + ", solicitudes=" + solicitudes + '}';
-    }
-
-    
-
 
 }
-
