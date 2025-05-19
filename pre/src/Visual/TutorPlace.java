@@ -5,6 +5,7 @@
 package Visual;
 
 import Controlador.Controlador;
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /**
@@ -15,9 +16,11 @@ public class TutorPlace {
 
     public static void main(String[] args) {
         Controlador controlador = new Controlador();
-        VistaInicio inicio = new VistaInicio(controlador);
-        inicio.setLocationRelativeTo(null);
-        inicio.setVisible(true);
+        VistaDetalle vista = new VistaDetalle(controlador);
+        vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vista.setSize(400, 400);
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
 
     }
 }
